@@ -2,6 +2,7 @@ package com.saneth.recipes;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -23,6 +24,21 @@ public class CardData extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "products1.db";
     private static final int DATABASE_VERSION = 1;
+
+//    public static final String TABLE_NAME ="Registration_Table";
+//    public static final String COL_1 ="ID";
+//    public static final String COL_2 ="Name";
+//    public static final String COL_3 ="Gender";
+//    public static final String COL_4 ="Email";
+//    public static final String COL_5 ="Phone";
+//    public static final String COL_6 ="Password";
+
+    static String loginuserID;
+    static String loginuserName;
+    static String loginuserGender;
+    static String loginuserEmail;
+    static String loginuserPhone;
+    static String loginuserPassword;
 
 
     public CardData(Context context) {
@@ -48,6 +64,8 @@ public class CardData extends SQLiteOpenHelper {
                 + DESCRIPTION +" TEXT ,"
                 + Constants.AVAILABILITY + " TEXT ) ; " );
 
+        String sqlque ="create table Registration_Table(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT,GENDER TEXT, EMAIL TEXT, PHONE INTEGER, PASSWORD TEXT)";
+        db.execSQL(sqlque);
 
 
         String sql ="CREATE TABLE USERMASSAGE(id INTEGER PRIMARY KEY AUTOINCREMENT,USERNUMBER TEXT ,MESSAGEDETAILS TEXT,STATUSZ TEXT)";
@@ -56,6 +74,9 @@ public class CardData extends SQLiteOpenHelper {
 
         String sql1 ="CREATE TABLE USERBLOCK(id INTEGER PRIMARY KEY AUTOINCREMENT,USERNAME TEXT ,USERNUMBER TEXT,STATUSZ TEXT)";
         db.execSQL(sql1);
+
+
+
     }
 
     @Override
@@ -111,5 +132,43 @@ public class CardData extends SQLiteOpenHelper {
 
 
 
+
+
+
+
+
+
+    public void insertData2(String name, String gender, String email, int phone, String pw){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues val = new ContentValues();
+        val.put("NAME", name);
+        val.put("GENDER", gender);
+        val.put("EMAIL", email);
+        val.put("PHONE", phone);
+        val.put("PASSWORD", pw);
+        sqLiteDatabase.insert("Registration_Table", null, val);
+    }
+
+    public Cursor ViewLoginData(String email, String pw){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor1 = sqLiteDatabase.rawQuery("Select * FROM Registration_Table Where Email='"+email+"' and Password='"+pw+"'", new String[]{});
+        return cursor1;
+
+    }
+
+    public void updatedata2(String teleno,String usernamez,String emailz,SQLiteDatabase database){
+
+        String updateque ="UPDATE  Registration_Table SET Phone='"+teleno+"',Name='"+usernamez+"',Email='"+emailz+"' WHERE ID='"+ CardData.loginuserID +"'";
+
+        database.execSQL(updateque);
+
+    }
+    public void deleteData2(SQLiteDatabase database){
+
+        String updateque ="DELETE FROM  Registration_Table WHERE ID='"+ CardData.loginuserID +"'";
+
+        database.execSQL(updateque);
+
+    }
 
 }

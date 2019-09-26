@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         LinearLayout search_btn2 = findViewById(R.id.recipes_btn2);
         search_btn2.setOnClickListener(this);
+
+        LinearLayout search_btn3 = findViewById(R.id.recipes_btn3);
+        search_btn3.setOnClickListener(this);
+
     }
 
     @Override
@@ -90,6 +94,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.recipes_btn2:
                 Intent intent8 = new Intent(MainActivity.this,BlockMain.class);
                 startActivity(intent8);
+                break;
+
+
+            case  R.id.recipes_btn3:
+                Intent intent9 = new Intent(MainActivity.this,Profile.class);
+                startActivity(intent9);
                 break;
         }
     }

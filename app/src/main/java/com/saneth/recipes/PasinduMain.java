@@ -111,8 +111,5 @@ public class PasinduMain extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
 
-    }
 }

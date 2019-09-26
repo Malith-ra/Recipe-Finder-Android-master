@@ -3,4 +3,17 @@
     <color name="colorPrimary">#FF0000</color>
     <color name="colorPrimaryDark">#AF0000</color>
     <color name="colorAccent">#FF6F00</color>
+
+
+
+<!--    <color name="colorPrimary">#008577</color>-->
+<!--    <color name="colorPrimaryDark">#00574B</color>-->
+<!--    <color name="colorAccent">#D81B60</color>-->
+    <color name="colorBackground">#AFE072</color>
+    <color name="colorToipc">#7F000000</color>
+    <color name="colorBut">#009688</color>
+    <color name="colorFont">#FFFFFF</color>
+
+
+
 </resources>
