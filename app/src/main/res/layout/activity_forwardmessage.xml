@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+tools:context=".MainActivity"
+android:orientation="vertical"    >
+
+
+<EditText
+    android:id="@+id/forwardsendnumberz"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+
+    android:hint="Type Numbers with ,"
+    android:inputType="text"
+    android:textSize="20dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+</EditText>
+
+<EditText
+    android:id="@+id/forwardsendmessage"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:hint="Type Message"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toTopOf="@+id/sendbtn"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/sendnumberz">
+
+
+</EditText>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:id="@+id/forwardtxtcount"
+    android:text="Word Count Is :                 Max size(65)"
+
+    ></TextView>
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="20dp"></Space>
+<Button
+    android:id="@+id/forwardsendbtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#93BFC4"
+    android:text="Send Message"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.847"></Button>
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="10dp"></Space>
+<Button
+    android:id="@+id/forwardviewbtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#25B1A5"
+    android:text="View"
+    android:textSize="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.847"></Button>
+
+</LinearLayout>

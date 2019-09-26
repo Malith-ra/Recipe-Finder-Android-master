@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockMain" android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/usernameblockz"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+
+        android:hint="Type Username"
+
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/usernumberblockz"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Type Number"
+        android:textSize="20dp"
+        android:inputType="number"
+        >
+
+
+    </EditText>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+    <Button
+        android:id="@+id/addblocklist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#55A7FF"
+        android:text="Add Number To Blocklist"
+        android:textSize="20dp"
+        ></Button>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></Space>
+    <Button
+        android:id="@+id/viewblocks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#55A7FF"
+        android:text="View Blocklist Numbers"
+        android:textSize="20dp"
+        ></Button>
+
+</LinearLayout>
